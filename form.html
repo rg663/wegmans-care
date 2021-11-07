@@ -1,0 +1,144 @@
+ <!DOCTYPE html>
+<html>
+  
+<head>
+	<title>tell us about yourself!</title>
+	<link rel="shortcut icon" type="image/jpg" href="heart.png">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	 crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body id="megacontainer">
+	<section class="jumbotron">
+		<div class="container">
+			<div class="row text-center">
+				<h2>welcome to Wegmans Care </h2>
+				<h3>&#9734 take a moment to de-stress &#9734</h3>
+				<a class="btn btn-primary" href="exercise.html" role="button">work out</a>
+				<a class="btn btn-primary" href="meditation.html" role="button">meditate</a>
+				<a class="btn btn-primary" href="mini_games.html" role="button">play a game</a>
+				<a class="btn btn-primary" href="motivation.html" role="button">get motivated</a>
+				<a class="btn btn-primary" href="playlist.html" role="button">listen to music</a>
+				<a class="btn btn-primary" href="self-care_tasks.html" role="button">self care</a>
+				<a class="btn btn-primary" href="form.html" role="button">questionnaire</a>					
+			</div>
+		</div>
+	</section>
+		
+<body>
+	
+	<section class="row">
+		<div class="container">
+		<h3 id="heading-3">Tell Us About Yourself! </h3>
+		<div></div>
+		<h3>For starters, who are you?</h3>
+		<form action="submit.html" method="GET" id="join">
+		<label for="first-name"> First Name- </label>
+		<input type="text" name="first-name" id="first-name" required>
+		<br>
+		<label for="first-name"> Middle Name- </label>
+		<input type="text" name="middle-name" id="middle-name">
+		<br>
+		<label for="last-name"> Last Name- </label>
+		<input type="text" name="last-name" id="last-name" required>
+		<br>
+		<label for="email-address"> Email- </label>
+		<input name="email-address" id="email-address" required>
+		<br>
+
+		<h3> Please inform us if you are specially abled in any way- </h3>
+		<p>We collect this information to give you the best possible experience </p>
+		<div></div>
+    <p> Please enter your age </p>
+    <input id = "age" name "age" type = "text" >
+    <button onclick = "greetings()"> Submit </button>
+		
+    <script>
+      function greetings(){
+      let age = Number(document.getElementById("age").value);
+      }
+    </script> -->
+
+
+    <script>
+			function loadChat() {
+      ajaxGetRequest("/chat", renderChat);
+}
+
+
+function renderChat(jsonData){
+  let newline = "<br>";
+  let chat = "";
+  let chatDiv = document.getElementById("chat");
+  let messages = JSON.parse(jsonData);
+  for (let messageObj of messages) {
+    chat = chat + messageObj["message"] + newline;
+  }
+  chatDiv["innerHTML"] = chat;
+}
+
+
+ let age = document.getElementById("age") -->
+
+
+
+< function sendMessage(){
+  
+  let age = document.getElementById("age")
+  // Get the message and let the user "know" it was
+  // sent by making the textbox be blank
+  let message = age["value"];
+  age.value = "";
+  let toSend = {"message": message};
+  jsonBlob = JSON.stringify(toSend);
+  ajaxPostRequest("/send", jsonBlob)
+
+}
+u
+
+
+
+</script>
+    
+    <br>
+    <br>
+  	<input id="physd" name="physd" type="checkbox" value=true>
+  	<label for="physd"> Unable to Walk </label>
+  	<br>
+  	<input id="visd" name="visd" type="checkbox" value=true>
+  	<label for="iisd">Unable to See </label>
+  	<br>
+  	<input id="hrd" name="hrd" type="checkbox" value=true>
+  	<label for="hrd">Unable to Hear </label>
+  	<br>
+		<button type="submit" class="btn btn-primary" onclick="undrstndval()">Time to destress!</button>
+  	</form>
+		</div>
+	</section>
+  <script>
+    l=[]
+    function undrstndval(){
+      x=document.getElementById("age").value
+      l.append(x)
+    }
+
+
+
+
+</body>
+
+</body>
+<br>
+<div class="container
+
+" id="bread">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="../index.html">home &#x2302</a></li>
+		</ol>
+	</nav>
+</div>
+</html>

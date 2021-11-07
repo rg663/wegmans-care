@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>come here for motivation!</title>
+  <div id = "tasks">
+  <script src="random_tasks.js">
+  </script>
+	<link rel="shortcut icon" type="image/jpg" href="/heart.png">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	 crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+	<section class="jumbotron">
+		<div class="container">
+			<div class="row text-center">
+				<h2>welcome to Wegmans Care </h2>
+				<h3>&#9734 take a moment to de-stress &#9734</h3>
+				<a class="btn btn-primary" href="exercise.html" role="button">work out</a>
+				<a class="btn btn-primary" href="meditation.html" role="button">meditate</a>
+				<a class="btn btn-primary" href="mini_games.html" role="button">play a game</a>
+				<a class="btn btn-primary" href="motivation.html" role="button">get motivated</a>
+				<a class="btn btn-primary" href="playlist.html" role="button">listen to music</a>
+				<a class="btn btn-primary" href="self-care_tasks.html" role="button">self care</a>
+				<a class="btn btn-primary" href="form.html" role="button">questionnaire</a>					
+			</div>
+		</div>
+	</section>
+  <section id="homepage" class="container">
+		<br>
+    <input id = "age" name "age" type = "text" >
+    <button onclick = "greetings()"> Submit </button>
+		<script>
+      function greetings(){
+      let age = (document.getElementById("age").value);
+      }
+    
+
+let age_value = Number(age)
+  //declare variable for disability 
+let phy_disability = document.getElementById("physd")
+let phy_disability_status = phy_disability["value"]
+
+let visd = document.getElementById("visd")
+let visd_status = visd["value"]
+
+let hrd = document.getElementById("hrd")
+let hrd_status = hrd["value"]
+
+
+
+function find_age_range(age_value){
+  if ((age_value >= 18) && (age_value <= 35) ){
+    return 1 
+  }else if ((age_value >= 36) && (age_value <= 50)){
+    return 2 
+  }else if ((age_value >= 51)&& (age_value <= 80)){
+    return 3 
+  }
+} 
+
+let not_disabled_random_tasks = {"Go outside" : [1,2,3], "Pet an animal" : [1,2,3], "Drink a glass of water" : [1,2,3] , "Call a friend or a loved one" : [1,2,3], "Try a new hobby" : [1,2,3], "Read a book" : [1,2,3] ,"Watch your favorite show" : [1,2], "Cook a meal" :[1,2,3], "Take a nap" :[1,2,3],"Drink tea" : [1,2,3], "Listen to music " : [1,2], "Watch Youtube": [1]}
+
+let physd_tasks = { "Pet an animal" : [1,2,3], "Drink a glass of water" : [1,2,3] , "Call a friend or a loved one" : [1,2,3], "Try a new hobby" : [1,2,3], "Read a book" : [1,2,3] ,"Watch your favorite show" : [1,2], "Cook a meal" :[1,2,3], "Take a nap" :[1,2,3],"Drink tea" : [1,2,3], "Listen to music " : [1,2], "Watch Youtube": [1]}
+
+let visd_tasks = {"Go outside" : [1,2,3], "Pet an animal" : [1,2,3], "Drink a glass of water" : [1,2,3] , "Call a friend or a loved one" : [1,2,3], "Try a new hobby" : [1,2,3], "Cook a meal" :[1,2,3], "Take a nap" :[1,2,3],"Drink tea" : [1,2,3], "Listen to music " : [1,2]}
+
+let hrd_tasks = {"Go outside" : [1,2,3], "Pet an animal" : [1,2,3], "Drink a glass of water" : [1,2,3] , "Call a friend or a loved one" : [1,2,3], "Try a new hobby" : [1,2,3], "Read a book" : [1,2,3] ,"Watch your favorite show" : [1,2], "Cook a meal" :[1,2,3], "Take a nap" :[1,2,3],"Drink tea" : [1,2,3], "Watch Youtube": [1]}
+
+function random_tasks(){
+  age_range = find_age_range(age_value)
+  if (phy_disability_status == true){
+    let list_of_possible_tasks = []
+    for (let key of Object.keys(physd_tasks)){
+      for ( let item of physd_tasks[key]){
+        if (item == age_range){
+          list_of_possible_tasks.push(key); } 
+    let index = Math.floor(Math.random() * list_of_possible_tasks.length)
+    return list_of_possible_tasks[index]
+        }      
+    }
+    
+  }
+  else if (visd_status == true ){
+    let list_of_possible_tasks = []
+    for(let key of Object.keys(visd_tasks)){
+      for(let item of visd_tasks[key]){
+        if (item == age_range){
+          list_of_possible_tasks.push(key)
+        }
+      }
+    }
+    let random_index = Math.floor(Math.random() * list_of_possible_tasks.length)
+    return list_of_possible_tasks[random_index]
+  }
+  else if (hrd_status == true){
+    let list_of_possible_tasks = []
+    for(let key of Object.keys(hrd_tasks)){
+      for(let item of hrd_tasks[key]){
+        if (item == age_range){
+          list_of_possible_tasks.push(key)
+        }
+      }
+    }
+    let random_index = Math.floor(Math.random() * list_of_possible_tasks.length)
+    return list_of_possible_tasks[random_index]
+
+  }
+  else{
+    let list_of_possible_tasks = []
+    for(let key of Object.keys(not_disabled_random_tasks){
+      for(let item of not_disabled_random_tasks[key]){
+        if (item == age_range){
+          list_of_possible_tasks.push(key)
+        }
+      }
+    }
+    let random_index = Math.floor(Math.random() * list_of_possible_tasks.length)
+    return list_of_possible_tasks[random_index]
+
+  
+  }
+  
+}
+tasks = document.getElementById("tasks")
+tasks["innerHTML"] = random_tasks()
+</script>
+
+
+		<div class="flex-container">
+			<h3 id="tasks"></h3>
+		</section>
+
+
+<br>
+<div class="container" id="bread">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/index.html">home &#x2302</a></li>
+		</ol>
+	</nav>
+</div>
+
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>
